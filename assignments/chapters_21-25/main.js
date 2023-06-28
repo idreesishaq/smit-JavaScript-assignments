@@ -142,7 +142,24 @@ if(availability === false){
 
 
 /*-------------------- Question No 15 --------------------*/
-/*complete this question*/
+var password = prompt("Enter alpha-number password");
+document.write("<br>" + password);
+document.write("<br>" + password.length);
+if (password.length < 6){
+    alert("Your password must be atlest 6 characters");
+}
+
+const isContainsSymbol = /^(?=.*[~`!@#$%^&*()--+={}\[\]|\\:;"'<>,.?/_₹]).*$/;
+
+if(isContainsSymbol.test(password)){
+    alert("Password only contain alpha-numeric characters");
+}
+
+const isContainsNumber = /^(?=.*[0-9]).*$/;
+
+if (isContainsNumber.test(password[0])){
+    alert("Password Should not start with a Number");
+}
 
 
 
