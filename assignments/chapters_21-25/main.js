@@ -162,14 +162,11 @@ document.write("<br> Last character of "+nationality +": "+ lastChar);
 
 
 /*-------------------- Question No 18 --------------------*/
-var stringWord = "The quick brown fox jumps over the lazy dog.";
-var findWordOccurences = prompt("Enter a word");
-let j = 0;
-for(let i = 0; i < stringWord.length; i++){
-    if (stringWord.slice(i,i+findWordOccurences.length) === findWordOccurences);
-    j++;
+var myString = "The quick brown fox jumps over the lazy dog";
+document.write(myString);
+var x = myString.matchAll(/the/gi); 
+document.write("<br>" + x); //returns an iterator containing the results of matching a string against a string (or a regular expression).
+y = Array.from(x);
 
-}
-console.log(j);
+document.write("<br>" + y + "<br>" + y.length);
 
-/*need to review*/
