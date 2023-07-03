@@ -90,7 +90,11 @@ document.write("<br> On reference date Sat Dec 05 2015 22:50:16 GMT+0500 (PKT), 
 
 
 /*------------------------------ QUESTION NO. 11 ------------------------------*/
-
+document.write("<br><br><br>");
+var currTime = new Date();
+document.write(currTime);
+var anHourAhead = new Date(new Date().setHours(currTime.getHours()-1));
+document.write("<br>"+ anHourAhead);
 
 /*------------------------------ QUESTION NO. 12 ------------------------------*/
 
