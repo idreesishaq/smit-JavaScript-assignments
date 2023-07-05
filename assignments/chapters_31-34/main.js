@@ -81,6 +81,7 @@ var dayPast = Math.floor(dayDiff / 1000 / 60 / 60 / 24);
 document.write("<br>" + dayPast + " days have passed since 1st Ramadan, 2023");
 
 
+
 /*------------------------------ QUESTION NO. 10 ------------------------------*/
 var timePassReference = new Date("Dec 05, 2015 22:50:16 GMT+0500 (PKT)").getTime() - new Date("Jan 1, 2015").getTime();
 var secPass = timePassReference / 1000;
@@ -89,11 +90,14 @@ document.write("<br> On reference date Sat Dec 05 2015 22:50:16 GMT+0500 (PKT), 
     + secPass + " Seconds and " + daysPass + " Days had been passed since the beginning of 2015");
 
 
+
 /*------------------------------ QUESTION NO. 11 ------------------------------*/
 var currTime = new Date();
-document.write(currTime);
+document.write("<br> current date: " + currTime);
 var anHourAhead = new Date(new Date().setHours(currTime.getHours()-1));
-document.write("<br>"+ anHourAhead);
+document.write("<br> 1 hour ago"+ anHourAhead);
+
+
 
 /*------------------------------ QUESTION NO. 12 ------------------------------*/
 var timeNow = new Date();
@@ -102,9 +106,29 @@ var hundredYearsBack = new Date(new Date().setFullYear(timeNow.getFullYear()-100
 document.write("<br> 100 Years back: "+ hundredYearsBack);
 
 
+
 /*------------------------------ QUESTION NO. 13 ------------------------------*/
+var yourAge = +prompt("Please enter your age");
+document.write("<br> Your age is: " + yourAge);
+document.write("<br> Your birth year is: " + (new Date().getFullYear()-yourAge));
+
 
 
 /*------------------------------ QUESTION NO. 14 ------------------------------*/
-
+document.write("<br><h1>K-Electric Bill</h1>");
+var customername = "Muhammad Idrees";
+var newMonthArr = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December",];
+var month = newMonthArr[new Date().getMonth()];
+var noOfUnits = 410;
+var chargesPerUnit = 16;
+var netAmount = noOfUnits * chargesPerUnit;
+var lateCharge = 350;
+var amountPayable = netAmount + lateCharge;
+document.write("<br> Customer Name: " + "<strong>" + customername + "</strong>");
+document.write("<br> Month: " + "<strong>" + month + "</strong>");
+document.write("<br> Number of units: " + "<strong>" + noOfUnits + "</strong>");
+document.write("<br> Charges per unit: " + "<strong>" + chargesPerUnit + "</strong>");
+document.write("<br> Net Amount Payable (within Due Date): " + "<strong>" + netAmount + "</strong>");
+document.write("<br> Late payment surcharge: " + "<strong>" + lateCharge + "</strong>");
+document.write("<br> Gross Amount Payable (after Due Date): " + "<strong>" + amountPayable + "</strong>");
 
