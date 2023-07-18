@@ -202,3 +202,51 @@ function overTimePay(totalWorkHour) {
 overTimePay(60)
 
 
+/* ------------------------- QUESTION NO 10 -------------------------*/
+var amount = +prompt("Enter amount you want to get");
+var note100 = 0;
+var note50 = 0;
+var note10 = 0;
+var leftAmount = amount;
+function currencyNotes(leftAmount) {
+    function currency100(leftAmount) {
+        // let i =0;
+        // while (amount >= 100){
+        //     note100++;
+        //     amount = amount-100;
+        // }
+        // console.log(note100);
+
+        for (let i = 0; leftAmount >= 100; i++) {
+            note100++;
+            leftAmount = leftAmount - 100;
+        }
+        console.log(note100 + " Notes of 100");
+        return leftAmount;
+    }
+
+    function currency50(leftAmount) {
+        for (let i = 0; leftAmount >= 50; i++) {
+            note50++;
+            leftAmount = leftAmount - 50;
+        }
+        console.log(note50 + " Notes of 50");
+        return leftAmount;
+    }
+
+    function currency10(amount) {
+        for (let i = 0; amount >= 10; i++) {
+            note10++;
+            amount = amount - 10;
+        }
+        console.log(note10 + " Notes of 10");
+        return amount;
+    }
+    leftAmount = currency100(leftAmount);
+    leftAmount = currency50(leftAmount)
+    leftAmount = currency10(leftAmount)
+}
+
+currencyNotes(leftAmount)
+console.log("Your amount " + amount);
+
