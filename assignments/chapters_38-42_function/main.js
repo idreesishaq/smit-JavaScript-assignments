@@ -167,4 +167,38 @@ var myPhrase = "The book you read is one of the top financial book";
 vowelOccurrences(myPhrase);
 
 
+/* ------------------------- QUESTION NO 8 -------------------------*/
+function kmToMeter(distance) {
+  console.log(distance * 1000 + " meters");
+}
+function kmToFeet(distance) {
+  var intoFeet = (distance * 3280.84).toFixed(2);
+  console.log(intoFeet + " Feet");
+}
+function kmToInches(distance) {
+  var intoInches = (distance * 1000 * 100 / 2.54).toFixed(2);
+  console.log(intoInches + " inches");
+
+}
+function kmToCentimeter(distance) {
+  var intoCm = (distance * 1_000_00).toFixed(2);
+  console.log(intoCm + " centimeter");
+}
+
+var distance = prompt("Enter any distance into kilometer, to convert into meter,cm, inches, and feet");
+kmToMeter(distance)
+kmToFeet(distance)
+kmToInches(distance)
+kmToCentimeter(distance)
+
+
+
+/* ------------------------- QUESTION NO 9 -------------------------*/
+function overTimePay(totalWorkHour) {
+    var overtimepay = (totalWorkHour - 40) * 12
+    console.log("overtime pay = " + overtimepay);
+}
+
+overTimePay(60)
+
 
