@@ -11,6 +11,12 @@
             width: 300px;
         }
 
+        #counter {
+            border-radius: 3px;
+            border: 1px solid black;
+            height: 150px;
+            width: 200px;
+        }
     </style>
 </head>
 
@@ -88,7 +94,31 @@
 
     </div>
     <hr>
-    
+
+
+    <!-- Question No 4 -->
+    <center>
+        <h1>Question No 4</h1>
+        <div class="image-container">
+            <img onMouseover="src='images/bmw_logo.png'" onMouseout="src='images/bmw.logo.jpg'"
+                src="images/bmw.logo.jpg">
+        </div>
+    </center>
+    <hr>
+
+    <!-- Question No 5 -->
+    <center>
+        <h1>Question No 5</h1>
+    </center>
+    <center>
+        <div id="counter">
+            <h3>Counter</h3>
+            <h1 id="counter-value">0</h1>
+            <button onClick="document.getElementById('counter-value').innerText--">Decrease</button> <button
+                onclick="document.getElementById('counter-value').innerText++">Increase</button>
+        </div>
+    </center>
     <script src="main.js"></script>
 </body>
+
 </html>
