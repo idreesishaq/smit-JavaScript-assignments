@@ -3,9 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Signup Form</title>
 </head>
 <body>
+    <h1>Signup Form</h1>
+    <form id="signupForm" onsubmit="handleSubmit()">
+        <lable for="name">Name: </lable>
+        <input type="text" id="name" required><br>
+
+        <lable for="email">Email: </lable>
+        <input type="email" id="email" required><br>
+
+        <lable for="number">Phone Number: </lable>
+        <input type="tel" id="number" required><br>
+
+        <lable for="password">Password: </lable>  
+        <input type="password" id="password" required><br>   
+        
+        <button type="submit">Submit</button>
+        
+    </form>
+
+    <div id="formDataContainer">
+
+    </div>
+
     
     <script src="main.js"></script>
 </body>
