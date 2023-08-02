@@ -25,8 +25,23 @@ function handleSubmit(event) {
 
 /*--------------- QUESTION NO 2 ---------------*/
 
-var shortText = "Lorem ipsum dolor sit amet consectetur adipisicing elit"
 var fullText = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non quaerat, reiciendis delectus exercitationem autem soluta explicabo similique iusto ab repellendus amet debitis, voluptatibus minima earum rerum mollitia magni iure suscipit."
+var shortText;
+var lessText = '';
 
-document.getElementById("shortContent").innerText = shortText;
+function seeMore(){
+    var seeContent = document.getElementById("shortContent");
+    var seeMoreBtn = document.getElementById("see-more-btn");
+    if(lessText){
+        seeContent.innerText = shortText;
+        seeMoreBtn.innerText = "See more";
+        lessText = '';
+        
+    } else{
+        shortText = document.getElementById("shortContent").innerText;
 
+        seeContent.innerText = fullText;
+        seeMoreBtn.innerText = "See less";
+        lessText = true;
+    }
+}
