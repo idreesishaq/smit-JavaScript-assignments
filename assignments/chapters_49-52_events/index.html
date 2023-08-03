@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup Form</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- QUESTION NO 1 -->
@@ -28,7 +29,7 @@
     <div id="formDataContainer">
 
     </div>
-
+<hr>
     <!-- QUESTION NO 2 -->
     <div style ="width:200px">
         
@@ -37,8 +38,45 @@
         
         <button id="see-more-btn" onClick="seeMore()">See more</button>
     </div>
+<hr>
 
+    <!-- QUESTION NO 3 -->
+    <!--In previous assignment you have created a tabular data
+    using javascript. Let’s modify that. Create a form which
+    takes student’s details and show each student detail in
+    table. Each row of table must contain a delete button and
+    an edit button. On click on delete button entire row should
+    be deleted. On click on edit button, a hidden form will
+    appear with the values of that row. -->
     
+    <form id="form"  onsubmit="getTableData()">
+        <lable for="naam"> Name: </lable>
+        <input type="text" id="naam" required><br>
+
+        <lable for="standard">Class: </lable>
+        <input type="text" id="standard" required><br>
+        
+        <lable for="grade">Grade: </lable>
+        <input type="text" id="grade" required><br>
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <table id="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Class</th>
+                <th>Grade</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- table body will be populated dynamically -->
+        </tbody>
+    </table>
+
     <script src="main.js"></script>
 </body>
 </html>
