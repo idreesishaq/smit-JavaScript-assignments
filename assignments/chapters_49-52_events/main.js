@@ -45,3 +45,55 @@ function seeMore(){
         lessText = true;
     }
 }
+
+/*--------------- QUESTION NO 3 ---------------*/
+
+students = [];
+
+
+function getTableData() {
+    event.preventDefault();
+var name = document.getElementById("naam").value;
+var standard = document.getElementById("standard").value;
+var grade = document.getElementById("grade").value;
+
+var student = { name: name, standard: standard, grade: grade }
+students.push(student);
+document.getElementById("form").reset();
+
+populateTableData()
+
+function populateTableData () {
+    
+    var row = document.createElement("tr");
+    var nameCell = document.createElement("td");
+    nameCell.textContent = student.name;
+    row.appendChild(nameCell);
+    
+    var standardCell = document.createElement("td");
+    standardCell.textContent = student.standard;
+    row.appendChild(standardCell);
+    
+    var gradeCell = document.createElement("td");
+    gradeCell.textContent = student.grade;
+    row.appendChild(gradeCell);
+
+    var actionCell = document.createElement("td");
+    row.appendChild(actionCell);
+    
+    var editBtn = document.createElement("button");
+    editBtn.textContent = "Edit";
+    actionCell.appendChild(editBtn);
+
+    var delBtn = document.createElement("button");
+    delBtn.textContent = "Delete";
+    actionCell.appendChild(delBtn);
+
+
+    var table = document.querySelector("#table, tbody");
+    table.appendChild(row);
+    }
+    
+
+}
+
