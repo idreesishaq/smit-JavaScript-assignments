@@ -48,52 +48,63 @@ function seeMore(){
 
 /*--------------- QUESTION NO 3 ---------------*/
 
-students = [];
+var students = [];
 
+function addStudent(event) {
+  event.preventDefault();
 
-function getTableData() {
-    event.preventDefault();
-var name = document.getElementById("naam").value;
-var standard = document.getElementById("standard").value;
-var grade = document.getElementById("grade").value;
+  var name = document.getElementById("naam").value;
+  var standard = document.getElementById("standard").value;
+  var grade = document.getElementById("grade").value;
 
-var student = { name: name, standard: standard, grade: grade }
-students.push(student);
-document.getElementById("form").reset();
+  var student = { name: name, standard: standard, grade: grade };
+  students.push(student);
 
-populateTableData()
-
-function populateTableData () {
-    
-    var row = document.createElement("tr");
-    var nameCell = document.createElement("td");
-    nameCell.textContent = student.name;
-    row.appendChild(nameCell);
-    
-    var standardCell = document.createElement("td");
-    standardCell.textContent = student.standard;
-    row.appendChild(standardCell);
-    
-    var gradeCell = document.createElement("td");
-    gradeCell.textContent = student.grade;
-    row.appendChild(gradeCell);
-
-    var actionCell = document.createElement("td");
-    row.appendChild(actionCell);
-    
-    var editBtn = document.createElement("button");
-    editBtn.textContent = "Edit";
-    actionCell.appendChild(editBtn);
-
-    var delBtn = document.createElement("button");
-    delBtn.textContent = "Delete";
-    actionCell.appendChild(delBtn);
-
-
-    var table = document.querySelector("#table, tbody");
-    table.appendChild(row);
-    }
-    
-
+  displayStudentTable();
+  document.getElementById("student-form").reset();
 }
 
+function displayStudentTable() {
+  var tableBody = document.getElementById("tableBody");
+  tableBody.innerHTML = "";
+
+  students.forEach(function(student, index) {
+    var row = createTableRow(student, index);
+    tableBody.appendChild(row);
+  });
+}
+
+function createTableRow(student, index) {
+  var row = document.createElement("tr");
+
+  var nameCell = document.createElement("td");
+  nameCell.textContent = student.name;
+  row.appendChild(nameCell);
+
+  var standardCell = document.createElement("td");
+  standardCell.textContent = student.standard;
+  row.appendChild(standardCell);
+
+  var gradeCell = document.createElement("td");
+  gradeCell.textContent = student.grade;
+  row.appendChild(gradeCell);
+
+  var actionsCell = document.createElement("td");
+  var deleteButton = document.createElement("button");
+  deleteButton.textContent = "Delete";
+  deleteButton.addEventListener("click", function() {
+    deleteStudent(index);
+  });
+  actionsCell.appendChild(deleteButton);
+
+  var editButton = document.createElement("button");
+  editButton.textContent = "Edit";
+  editButton.addEventListener("click", function() {
+    editStudent(index);
+  });
+  actionsCell.appendChild(editButton);
+
+  row.appendChild(actionsCell);
+
+  return row;
+}
