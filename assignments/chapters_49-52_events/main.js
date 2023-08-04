@@ -108,3 +108,8 @@ function createTableRow(student, index) {
 
   return row;
 }
+
+function deleteStudent(index) {
+  students.splice(index, 1);
+  displayStudentTable();
+}
