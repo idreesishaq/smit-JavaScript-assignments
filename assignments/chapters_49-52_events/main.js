@@ -113,3 +113,39 @@ function deleteStudent(index) {
   students.splice(index, 1);
   displayStudentTable();
 }
+function editStudent(index) {
+  var row = document.getElementById("tableBody").children[index];
+  var nameCell = row.children[0];
+  var standardCell = row.children[1];
+  var gradeCell = row.children[2];
+
+  var nameValue = nameCell.textContent;
+  var standardValue = standardCell.textContent;
+  var gradeValue = gradeCell.textContent;
+
+  nameCell.innerHTML = `<input type="text" value="${nameValue}">`;
+  standardCell.innerHTML = `<input type="number" value="${standardValue}">`;
+  gradeCell.innerHTML = `<input type="text" value="${gradeValue}">`;
+
+  var actionsCell = row.children[3];
+  var saveButton = document.createElement("button");
+  saveButton.textContent = "Save";
+  saveButton.addEventListener("click", function() {
+    saveStudent(index);
+  });
+  actionsCell.innerHTML = "";
+  actionsCell.appendChild(saveButton);
+}
+
+function saveStudent(index) {
+  var row = document.getElementById("tableBody").children[index];
+  var nameValue = row.children[0].querySelector("input").value;
+  var standardValue = row.children[1].querySelector("input").value;
+  var gradeValue = row.children[2].querySelector("input").value;
+
+  students[index].name = nameValue;
+  students[index].standard = standardValue;
+  students[index].grade = gradeValue;
+
+  displayStudentTable();
+}
