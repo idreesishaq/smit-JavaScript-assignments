@@ -49,7 +49,7 @@
     be deleted. On click on edit button, a hidden form will
     appear with the values of that row. -->
     
-    <form id="form"  onsubmit="getTableData()">
+    <form id="student-form"  onsubmit="addStudent(event)">
         <lable for="naam"> Name: </lable>
         <input type="text" id="naam" required><br>
 
@@ -72,7 +72,7 @@
                 <th>Action</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="tableBody">
             <!-- table body will be populated dynamically -->
         </tbody>
     </table>
