@@ -1,0 +1,36 @@
+
+.image-container{
+    display: flex;
+    justify-content: center;
+    border-spacing: 10px;
+}
+span{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+img{
+    height:100px;
+}
+#modal-container{
+    margin-top: 0;
+    height:250px;
+    width:430px;
+    position:absolute;
+    left:28%;
+}
+#modal-img{
+    height:250px;
+}
+#close-btn{
+    position: absolute;
+    right:0;
+}
+#close-btn:hover{
+    background-color: gray;
+    cursor: pointer;
+    display:block;
+}
+#close-btn:active{
+    background-color: rgba(128,128,128,0.2);
+}
