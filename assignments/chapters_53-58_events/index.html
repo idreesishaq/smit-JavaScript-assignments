@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    
-    <script src="main.js"></script>
+
+<body id="body">
+  <h1>images modal</h1>
+  <div class="image-container" id="image-container">
+    <div>
+      <img src="images/bolivia1.jfif" alt="bolivia" class="img">
+    </div>
+    <div>
+      <img src="images/ecuador1.jfif" alt="ecaudor" class="img">
+    </div>
+    <div>
+      <img src="images/mexico1.jfif" alt="mexico" class="img">
+    </div>
+    <div>
+      <img src="images/peru1.jfif" alt="peru" class="img">
+    </div>
+  </div>
+
+  <div id="modal-container">
+    <span id="close-btn" onclick="closeImg()">&times;</span>
+    <img src="" alt="" id="modal-img">
+  </div>
+
+
+  <script src="main.js"></script>
 </body>
+
 </html>
