@@ -92,3 +92,42 @@ var candidate6 = new Candidate("umair", "rao", 27, "Pakistan");
 var candidates = [candidate1, candidate2, candidate3, candidate4, candidate5, candidate6];
 console.log(candidates);
 
+
+/* ------------------ QUESTION NO 4 ------------------
+Suppose you want to check population of your area, their educations and professions.
+Create a constructor function which holds following properties:
+Name, gender, address, education, profession,
+Enter all records one by one.
+*/
+
+function Census(name, gender, address, education, profession) {
+    this.name = name;
+    this.gender = gender;
+    this.address = address;
+    this.education = education;
+    this.profession = profession;
+}
+
+var fullName = document.getElementById("full-name");
+var gender = document.getElementsByName("gender");
+var address = document.getElementById("address");
+var education = document.getElementById("education");
+var profession = document.getElementById("profession");
+var form = document.getElementById("form");
+
+var submit = document.getElementById("submit");
+submit.addEventListener("click", function () {
+    event.preventDefault();
+    let genderValue;
+    for (let i = 0; i < gender.length; i++) {
+        if (gender[i].checked) {
+            genderValue = gender[i].value
+        }
+    }
+
+    var key = "census" + (localStorage.length + 1);
+    var census = new Census(fullName.value, genderValue, address.value, education.value, profession.value);
+    localStorage.setItem(key, JSON.stringify(census));
+
+    form.reset();
+})
